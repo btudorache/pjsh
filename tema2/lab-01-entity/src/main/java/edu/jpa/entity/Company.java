@@ -1,8 +1,21 @@
 package edu.jpa.entity;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "Company")
+@SecondaryTable(name = "CompanyDetail",
+                pkJoinColumns = @PrimaryKeyJoinColumn(name = "Company_id",
+                                                      referencedColumnName = "Company_id"))
 public class Company {
+    @Id
+    @Column(name = "Company_id", table = "Company")
     private int id;
+    @Column(name = "Name", table = "Company")
+
     private String name;
+    @Column(name = "Address", table = "Company")
+
     private String address;
 
     public int getId() {

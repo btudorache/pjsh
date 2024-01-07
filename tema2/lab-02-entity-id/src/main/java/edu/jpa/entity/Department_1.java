@@ -1,6 +1,14 @@
 package edu.jpa.entity;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+
+@Entity
 public class Department_1 {
+
+    @GeneratedValue
+    @Id
     private int id;
     private String companyName;
     private String departmentName;
